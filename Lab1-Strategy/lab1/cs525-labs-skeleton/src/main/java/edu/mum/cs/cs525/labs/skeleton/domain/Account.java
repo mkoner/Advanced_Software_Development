@@ -1,4 +1,6 @@
-package edu.mum.cs.cs525.labs.skeleton;
+package edu.mum.cs.cs525.labs.skeleton.domain;
+
+import edu.mum.cs.cs525.labs.skeleton.domain.strategy.InterestStrategy;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +11,7 @@ public class Account {
 
 	private String accountNumber;
 	private AccountType accountType;
-	private Interestcalculator interestcalculator;
+	private InterestStrategy interestStrategy;
 
 	private List<AccountEntry> entryList = new ArrayList<AccountEntry>();
 

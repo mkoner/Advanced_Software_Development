@@ -1,4 +1,6 @@
-package edu.mum.cs.cs525.labs.skeleton;
+package edu.mum.cs.cs525.labs.skeleton.domain;
+
+import edu.mum.cs.cs525.labs.skeleton.repository.AccountDAO;
 
 import java.util.ArrayList;
 import java.util.Collection;

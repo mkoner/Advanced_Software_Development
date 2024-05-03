@@ -1,4 +1,6 @@
-package edu.mum.cs.cs525.labs.skeleton;
+package edu.mum.cs.cs525.labs.skeleton.service;
+
+import edu.mum.cs.cs525.labs.skeleton.domain.Account;
 
 import java.util.Collection;
 

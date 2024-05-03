@@ -1,5 +1,11 @@
 package edu.mum.cs.cs525.labs.skeleton;
 
+import edu.mum.cs.cs525.labs.skeleton.domain.Account;
+import edu.mum.cs.cs525.labs.skeleton.domain.AccountEntry;
+import edu.mum.cs.cs525.labs.skeleton.domain.Customer;
+import edu.mum.cs.cs525.labs.skeleton.service.AccountService;
+import edu.mum.cs.cs525.labs.skeleton.service.AccountServiceImpl;
+
 public class Application {
 	public static void main(String[] args) {
 		AccountService accountService = new AccountServiceImpl();

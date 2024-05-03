@@ -1,6 +1,6 @@
-package edu.mum.cs.cs525.labs.skeleton;
+package edu.mum.cs.cs525.labs.skeleton.domain.strategy;
 
-public class CheckingInterestCalculator implements Interestcalculator{
+public class CheckingInterestStrategy implements InterestStrategy {
     @Override
     public double calculateInterest(double balance) {
         if(balance<1000)

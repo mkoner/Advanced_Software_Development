@@ -1,11 +1,19 @@
-package edu.mum.cs.cs525.labs.skeleton;
+package edu.mum.cs.cs525.labs.skeleton.service;
+
+import edu.mum.cs.cs525.labs.skeleton.domain.AccountType;
+import edu.mum.cs.cs525.labs.skeleton.domain.strategy.CheckingInterestStrategy;
+import edu.mum.cs.cs525.labs.skeleton.domain.strategy.SavingsInterestStrategy;
+import edu.mum.cs.cs525.labs.skeleton.domain.Account;
+import edu.mum.cs.cs525.labs.skeleton.domain.Customer;
+import edu.mum.cs.cs525.labs.skeleton.repository.AccountDAO;
+import edu.mum.cs.cs525.labs.skeleton.domain.AccountDAOImpl;
 
 import java.util.Collection;
 
 public class AccountServiceImpl implements AccountService {
 	private AccountDAO accountDAO;
-	AccountType checkingAccountType = new AccountType("checking", new CheckingInterestCalculator());
-	AccountType savingAccountType = new AccountType("saving", new SavingInterestCalculator());
+	AccountType checkingAccountType = new AccountType("checking", new CheckingInterestStrategy());
+	AccountType savingAccountType = new AccountType("saving", new SavingsInterestStrategy());
 	
 	public AccountServiceImpl(){
 		accountDAO = new AccountDAOImpl();
