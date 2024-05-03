@@ -1,7 +1,7 @@
 package edu.mum.cs.cs525.labs.skeleton.service;
 
-import edu.mum.cs.cs525.labs.skeleton.domain.AccountType;
 import edu.mum.cs.cs525.labs.skeleton.domain.strategy.CheckingInterestStrategy;
+import edu.mum.cs.cs525.labs.skeleton.domain.strategy.InterestStrategy;
 import edu.mum.cs.cs525.labs.skeleton.domain.strategy.SavingsInterestStrategy;
 import edu.mum.cs.cs525.labs.skeleton.domain.Account;
 import edu.mum.cs.cs525.labs.skeleton.domain.Customer;
@@ -12,8 +12,9 @@ import java.util.Collection;
 
 public class AccountServiceImpl implements AccountService {
 	private AccountDAO accountDAO;
-	AccountType checkingAccountType = new AccountType("checking", new CheckingInterestStrategy());
-	AccountType savingAccountType = new AccountType("saving", new SavingsInterestStrategy());
+
+	InterestStrategy checkingInterestStrategy = new CheckingInterestStrategy();
+	InterestStrategy savingInterestStrategy = new SavingsInterestStrategy();
 	
 	public AccountServiceImpl(){
 		accountDAO = new AccountDAOImpl();
@@ -21,12 +22,13 @@ public class AccountServiceImpl implements AccountService {
 
 	public Account createAccount(String accountNumber, String customerName, String accountType) {
 		Account account = new Account(accountNumber);
+		account.setAccountType(accountType);
 		Customer customer = new Customer(customerName);
 		account.setCustomer(customer);
 		if(accountType.equals("checking"))
-			account.setAccountType(checkingAccountType);
-		else
-			account.setAccountType(savingAccountType);
+			account.setInterestStrategy(checkingInterestStrategy);
+		if(accountType.equals("saving"))
+			account.setInterestStrategy(savingInterestStrategy);
 		
 		accountDAO.saveAccount(account);
 		

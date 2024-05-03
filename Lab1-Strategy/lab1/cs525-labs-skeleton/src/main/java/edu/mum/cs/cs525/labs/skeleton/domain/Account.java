@@ -10,7 +10,8 @@ public class Account {
 	private Customer customer;
 
 	private String accountNumber;
-	private AccountType accountType;
+	//private AccountType accountType;
+	private String accountType;
 	private InterestStrategy interestStrategy;
 
 	private List<AccountEntry> entryList = new ArrayList<AccountEntry>();
@@ -46,9 +47,9 @@ public class Account {
 	}
 
 	public void addInterest(){
-		AccountEntry entry = new AccountEntry(accountType.getInterestcalculator()
+		AccountEntry entry = new AccountEntry(interestStrategy
 				.calculateInterest(getBalance()),
-				"addInterest", "", "");
+				"Interest", "", "");
 		entryList.add(entry);
 	}
 
@@ -79,11 +80,19 @@ public class Account {
 		return entryList;
 	}
 
-	public AccountType getAccountType() {
+	public String getAccountType() {
 		return accountType;
 	}
 
-	public void setAccountType(AccountType accountType) {
+	public void setAccountType(String accountType) {
 		this.accountType = accountType;
+	}
+
+	public InterestStrategy getInterestStrategy() {
+		return interestStrategy;
+	}
+
+	public void setInterestStrategy(InterestStrategy interestStrategy) {
+		this.interestStrategy = interestStrategy;
 	}
 }
