@@ -3,22 +3,31 @@ package edu.mum.cs.cs525.labs.skeleton.service;
 import edu.mum.cs.cs525.labs.skeleton.domain.Customer;
 import edu.mum.cs.cs525.labs.skeleton.domain.Account;
 import edu.mum.cs.cs525.labs.skeleton.repository.AccountDAO;
-import edu.mum.cs.cs525.labs.skeleton.repository.AccountDAOImpl;
+import edu.mum.cs.cs525.labs.skeleton.repository.ProdAccountDAOImpl;
+import edu.mum.cs.cs525.labs.skeleton.repository.factory.AccountDAOFactory;
 
 import java.util.Collection;
 
 public class AccountServiceImpl implements AccountService {
 	private AccountDAO accountDAO;
-	
-	public AccountServiceImpl(){
-		accountDAO = new AccountDAOImpl();
+	private AccountDAOFactory accountDAOFactory;
+
+	@Override
+	public void setAccountDAOFactory(AccountDAOFactory accountDAOFactory) {
+		this.accountDAOFactory = accountDAOFactory;
+		this.accountDAO = accountDAOFactory.createAccountDAO();
+	}
+
+	public AccountServiceImpl(AccountDAOFactory accountDAOFactory){
+		this.accountDAOFactory = accountDAOFactory;
+		this.accountDAO = accountDAOFactory.createAccountDAO();
 	}
 
 	public Account createAccount(String accountNumber, String customerName) {
 		Account account = new Account(accountNumber);
 		Customer customer = new Customer(customerName);
 		account.setCustomer(customer);
-		
+
 		accountDAO.saveAccount(account);
 		
 		return account;
@@ -27,7 +36,7 @@ public class AccountServiceImpl implements AccountService {
 	public void deposit(String accountNumber, double amount) {
 		Account account = accountDAO.loadAccount(accountNumber);
 		account.deposit(amount);
-		
+
 		accountDAO.updateAccount(account);
 	}
 

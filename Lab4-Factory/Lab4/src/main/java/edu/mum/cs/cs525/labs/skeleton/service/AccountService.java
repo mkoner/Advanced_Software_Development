@@ -1,6 +1,7 @@
 package edu.mum.cs.cs525.labs.skeleton.service;
 
 import edu.mum.cs.cs525.labs.skeleton.domain.Account;
+import edu.mum.cs.cs525.labs.skeleton.repository.factory.AccountDAOFactory;
 
 import java.util.Collection;
 
@@ -11,4 +12,5 @@ public interface AccountService {
     void deposit (String accountNumber, double amount);
     void withdraw (String accountNumber, double amount);
     void transferFunds(String fromAccountNumber, String toAccountNumber, double amount, String description);
+    void setAccountDAOFactory(AccountDAOFactory accountDAOFactory);
 }
