@@ -5,14 +5,14 @@ import edu.mum.cs.cs525.labs.skeleton.domain.AccountEntry;
 
 public class P3 extends InterestPromotionDecorator{
     public P3(Account account) {
-        super(account);
+        this.account = account;
     }
 
     @Override
     public void addInterest() {
-        double balance = getAccount().getBalance();
-        AccountEntry entry = new AccountEntry(balance*0.03, "interest from decorator P3", "", "");
-        getAccount().addEntry(entry);
-        System.out.println(getAccount().getAccountNumber());
+        double balance = account.getBalance();
+        AccountEntry entry = new AccountEntry(balance*0.03, "interest from P3", "", "");
+        account.addEntry(entry);
+        System.out.println("Interest added to account " + account.getAccountNumber());
     }
 }

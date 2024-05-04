@@ -29,7 +29,7 @@ public class Application {
 
 		InterestPromotionDecorator a = new P1(account1);
 		InterestPromotionDecorator b = new P2(account2);
-		InterestPromotionDecorator c = new P3(account2);
+		InterestPromotionDecorator c = new P3(account1);
 		a.addInterest();
 		b.addInterest();
 		c.addInterest();
