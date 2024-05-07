@@ -2,6 +2,8 @@ package edu.mum.cs.cs525.labs.skeleton.service;
 
 import edu.mum.cs.cs525.labs.skeleton.domain.Customer;
 import edu.mum.cs.cs525.labs.skeleton.domain.Account;
+import edu.mum.cs.cs525.labs.skeleton.domain.commandPattern.DepositCommand;
+import edu.mum.cs.cs525.labs.skeleton.domain.commandPattern.TransactionInvoker;
 import edu.mum.cs.cs525.labs.skeleton.repository.AccountDAO;
 import edu.mum.cs.cs525.labs.skeleton.repository.AccountDAOImpl;
 
@@ -9,7 +11,6 @@ import java.util.Collection;
 
 public class AccountServiceImpl implements AccountService {
 	private AccountDAO accountDAO;
-	
 	public AccountServiceImpl(){
 		accountDAO = new AccountDAOImpl();
 	}
@@ -54,5 +55,12 @@ public class AccountServiceImpl implements AccountService {
 		fromAccount.transferFunds(toAccount, amount, description);
 		accountDAO.updateAccount(fromAccount);
 		accountDAO.updateAccount(toAccount);
+	}
+
+	@Override
+	public void undoLastTransaction(String accountNumber) {
+		Account account = accountDAO.loadAccount(accountNumber);
+		account.removeLastEntry();
+		accountDAO.updateAccount(account);
 	}
 }

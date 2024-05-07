@@ -67,5 +67,8 @@ public class Account {
 	public Collection<AccountEntry> getEntryList() {
 		return entryList;
 	}
+	public void removeLastEntry(){
+		entryList.remove(entryList.size()-1);
+	}
 
 }
