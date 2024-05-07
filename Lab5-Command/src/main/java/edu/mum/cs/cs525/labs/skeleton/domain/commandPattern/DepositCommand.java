@@ -16,6 +16,7 @@ public class DepositCommand implements Command {
 
     @Override
     public void undo(TransactionPayload transactionPayload) {
-        accountService.undoLastTransaction(accountNumber);
+        accountService.withdraw(transactionPayload.getToAccount(),
+                transactionPayload.getAmount());
     }
 }

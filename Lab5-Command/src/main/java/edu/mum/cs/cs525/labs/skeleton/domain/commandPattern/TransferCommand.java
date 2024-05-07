@@ -16,7 +16,9 @@ public class TransferCommand implements Command {
     }
 
     @Override
-    public void undo(String accountNumber) {
-        accountService.undoLastTransaction(accountNumber);
+    public void undo(TransactionPayload transactionPayload) {
+        accountService.transferFunds(transactionPayload.getToAccount(),
+                transactionPayload.getFromAccount(), transactionPayload.getAmount(),
+                transactionPayload.getDescription());
     }
 }

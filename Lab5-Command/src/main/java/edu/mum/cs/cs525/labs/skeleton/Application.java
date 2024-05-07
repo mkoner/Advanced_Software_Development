@@ -14,7 +14,6 @@ public class Application {
 		DepositCommand depositCommand = new DepositCommand(accountService);
 		WithdrawCommand withdrawCommand = new WithdrawCommand(accountService);
 		TransferCommand transferCommand = new TransferCommand(accountService);
-		Command undoCommand;
 		TransactionPayload transactionPayload;
 
 		// create 2 accounts;
@@ -23,7 +22,6 @@ public class Application {
 
 		// use account 1;
 		transactionInvoker.setTransaction(depositCommand);
-		undoCommand = depositCommand;
 		//accountService.deposit("1263862", 240);
 		transactionPayload = new TransactionPayload("1263862",
 				"", 240, "");
@@ -34,18 +32,16 @@ public class Application {
 		transactionInvoker.execute(transactionPayload);
 
 		transactionInvoker.setTransaction(withdrawCommand);
-		undoCommand = withdrawCommand;
 		//accountService.withdraw("1263862", 230);
 		transactionPayload = new TransactionPayload("1263862",
 				"", 230, "");
 		transactionInvoker.execute(transactionPayload);
 
 		//undo transaction
-		transactionInvoker.undo(transactionPayload.getToAccount());
+		transactionInvoker.undo(transactionPayload);
 
 		// use account 2;
 		transactionInvoker.setTransaction(depositCommand);
-		undoCommand = depositCommand;
 		//accountService.deposit("4253892", 12450);
 		transactionPayload = new TransactionPayload("4253892",
 				"", 12450, "");
@@ -53,10 +49,12 @@ public class Application {
 
 		//accountService.transferFunds("4253892", "1263862", 100, "payment of invoice 10232");
 		transactionInvoker.setTransaction(transferCommand);
-		undoCommand = transferCommand;
 		transactionPayload = new TransactionPayload("4253892", "1263862",
 				100, "payment of invoice 10232");
 		transactionInvoker.execute(transactionPayload);
+
+		//undo transfer
+		transactionInvoker.undo(transactionPayload);
 
 
 		// show balances

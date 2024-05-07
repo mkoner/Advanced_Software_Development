@@ -5,8 +5,8 @@ public class TransactionInvoker {
     public void execute(TransactionPayload transactionPayload) {
         transaction.execute(transactionPayload);
     }
-    public void undo(String accountNumber) {
-        transaction.undo(accountNumber);
+    public void undo(TransactionPayload transactionPayload) {
+        transaction.undo(transactionPayload);
     }
 
     public void setTransaction(Command transaction) {

@@ -56,11 +56,4 @@ public class AccountServiceImpl implements AccountService {
 		accountDAO.updateAccount(fromAccount);
 		accountDAO.updateAccount(toAccount);
 	}
-
-	@Override
-	public void undoLastTransaction(String accountNumber) {
-		Account account = accountDAO.loadAccount(accountNumber);
-		account.removeLastEntry();
-		accountDAO.updateAccount(account);
-	}
 }

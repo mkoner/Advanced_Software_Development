@@ -15,7 +15,8 @@ public class WithdrawCommand implements Command{
     }
 
     @Override
-    public void undo(String accountNumber) {
-        accountService.undoLastTransaction(accountNumber);
+    public void undo(TransactionPayload transactionPayload) {
+        accountService.deposit(transactionPayload.getToAccount(),
+                transactionPayload.getAmount());
     }
 }
