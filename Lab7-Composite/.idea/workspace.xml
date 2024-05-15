@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b3b364a-ff1f-41b1-a984-450c87abf7e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab7-Composite/src/main/java/lab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab7-Composite/src/main/java/lab/Main.java" afterDir="false" />
+    <list default="true" id="e35df649-f5a8-43ba-867e-f03fec4de932" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/lab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,19 +15,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2g9aStAQykvuEIeS9OimTQchDI3" />
+  <component name="ProjectId" id="2gRFKdSJIHumdsp5Oefq3rZhnaf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,15 +36,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ASD/Labs/Code/Lab6-Adapter/adapter&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -62,19 +55,28 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0b3b364a-ff1f-41b1-a984-450c87abf7e1" name="Changes" comment="" />
-      <created>1715112252681</created>
+      <changelist id="e35df649-f5a8-43ba-867e-f03fec4de932" name="Changes" comment="" />
+      <created>1715652422988</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1715112252681</updated>
-      <workItem from="1715112253901" duration="1787000" />
-      <workItem from="1715133724466" duration="1987000" />
-      <workItem from="1715579922817" duration="1173000" />
-      <workItem from="1715714437676" duration="595000" />
+      <updated>1715652422988</updated>
+      <workItem from="1715652424153" duration="2399000" />
+      <workItem from="1715714418732" duration="36000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lab/Main.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
