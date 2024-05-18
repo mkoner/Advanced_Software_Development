@@ -11,9 +11,9 @@ public class CountVisitor implements Visitor{
     @Override
     public void visitDirectory(Directory directory) {
         count++;
-        for (FileSystemComponent component : directory.getComponents()) {
-            component.accept(this);
-        }
+//        for (FileSystemComponent component : directory.getComponents()) {
+//            component.accept(this);
+//        }
     }
     public int getCount() {
         return count;

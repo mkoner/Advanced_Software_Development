@@ -24,6 +24,9 @@ public class Directory extends FileSystemComponent{
     @Override
     public void accept(Visitor visitor) {
         visitor.visitDirectory(this);
+        for (FileSystemComponent component : components) {
+            component.accept(visitor);
+        }
     }
 
     @Override
